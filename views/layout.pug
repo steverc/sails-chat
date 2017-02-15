@@ -1,0 +1,122 @@
+doctype html
+html
+  head
+    if locals.title
+      title= title
+    else
+      title Test page
+
+    // Viewport mobile tag for sensible mobile support
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport',content='width=device-width, initial-scale=1, maximum-scale=1')
+
+    //-
+      Stylesheets and Preprocessors
+      ==============================
+
+      You can always bring in CSS files manually with `<link>` tags, or asynchronously
+      using a solution like AMD (RequireJS).  Or, if you like, you can take advantage
+      of Sails' conventional asset pipeline (boilerplate Gruntfile).
+
+      By default, stylesheets from your `assets/styles` folder are included
+      here automatically (between STYLES and STYLES END). Both CSS (.css) and LESS (.less)
+      are supported. In production, your styles will be minified and concatenated into
+      a single file.
+
+      To customize any part of the built-in behavior, just edit `tasks/pipeline.js`.
+      For example, here are a few things you could do:
+
+          + Change the order of your CSS files
+          + Import stylesheets from other directories
+          + Use a different or additional preprocessor, like SASS, SCSS or Stylus
+
+    //link(rel='stylesheet', href='/styles/style.css')
+
+    // STYLES
+    link(rel="stylesheet", href="/styles/bootstrap.min.css")
+    link(rel="stylesheet", href="/styles/bootstrap-theme.min.css")
+    link(rel="stylesheet", href="/styles/importer.css")
+    // STYLES END
+
+    <!--STYLES-->
+    
+    <!--STYLES END-->
+
+    //link(rel='icon', type='img/png', href='images/icon_tim.png')
+
+    block css-include
+
+  body
+    nav(class=['navbar', 'navbar-default', 'navbar-fixed-top'], role='navigation')
+      .container
+        p.navbar-text(class='navbar-right') #{user}
+      //.navbar-header(class=['col-xs-10', 'col-xs-offset-1'])
+    //    a(href='#')
+    //      img#timLogo(src='images/logo_tim_rev.png')
+    //    a(href='#')
+    //      img#tpLogo(src='images/Logo_TIM-Personal_negativo_DEF.png')
+    //.container-fluid(class='no-padding')
+    .container-fluid
+      header.col-xs-12
+        h1 #{title}
+    //.container(class='main-content')
+    .container
+      block content
+    footer.navbar-fixed-bottom
+      .container
+        block footerContent
+
+    //-
+      Client-side Templates
+      ========================
+
+      HTML templates are important prerequisites of modern, rich client applications.
+      To work their magic, frameworks like Backbone, Angular, Ember, and Knockout require
+      that you load these templates client-side.
+
+      By default, your Gruntfile is configured to automatically load and precompile
+      client-side JST templates in your `assets/templates` folder, then
+      include them here automatically (between TEMPLATES and TEMPLATES END).
+
+      To customize this behavior to fit your needs, just edit `tasks/pipeline.js`.
+      For example, here are a few things you could do:
+
+          + Import templates from other directories
+          + Use a different template engine (handlebars, jade, dust, etc.)
+          + Internationalize your client-side templates using a server-side
+            stringfile before they're served.
+
+    // TEMPLATES
+    
+    // TEMPLATES END
+
+    //-
+      Client-side Javascript
+      ========================
+
+      You can always bring in JS files manually with `script` tags, or asynchronously
+      on the client using a solution like AMD (RequireJS).  Or, if you like, you can
+      take advantage of Sails' conventional asset pipeline (boilerplate Gruntfile).
+
+      By default, files in your `assets/js` folder are included here
+      automatically (between SCRIPTS and SCRIPTS END).  Both JavaScript (.js) and
+      CoffeeScript (.coffee) are supported. In production, your scripts will be minified
+      and concatenated into a single file.
+
+      To customize any part of the built-in behavior, just edit `tasks/pipeline.js`.
+      For example, here are a few things you could do:
+
+          + Change the order of your scripts
+          + Import scripts from other directories
+          + Use a different preprocessor, like TypeScript
+
+    script(src='js/dependencies/sails.io.js')
+
+    // SCRIPTS
+    script(src="/js/dependencies/sails.io.js")
+    script(src="/js/dependencies/jquery.min.js")
+    script(src="/js/dependencies/bootstrap.min.js")
+    // SCRIPTS END
+    block js-include
+
