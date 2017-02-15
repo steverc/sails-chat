@@ -1,7 +1,7 @@
 {
-  "name": "sails-chat2",
+  "name": "sails-chat",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "a Sails application",
   "keywords": [],
   "dependencies": {
@@ -27,11 +27,18 @@
     "debug": "node debug app.js",
     "start": "node app.js"
   },
+  "engines": {
+    "node": "4.7.3",
+    "npm": "3.5.0"
+  },
   "main": "app.js",
   "repository": {
     "type": "git",
-    "url": "git://github.com/stefano/sails-chat2.git"
+    "url": "git://github.com/steverc/sails-chat"
   },
-  "author": "stefano",
-  "license": ""
+  "author": "Stefano Vercelli",
+  "license": "MIT",
+  "devDependencies": {
+    "grunt-bower-task": "^0.4.0"
+  }
 }
